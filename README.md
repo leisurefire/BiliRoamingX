@@ -10,7 +10,7 @@
 </div>
 
 基于 ReVanced 实现的B站 Android 客户端增强模块。模块设置完美融入 APP 设置，功能丰富，自定义程度高。
-得益于实现方式，对 APP 性能几乎没有影响，流畅、迅速、启动快。支持粉版、Play 版及 HD 版。
+得益于实现方式，对 APP 性能几乎没有影响，流畅、迅速、启动快。
 
 ## 📖 主要功能
 
@@ -45,23 +45,9 @@
 </div>
 </div>
 
-## 💻 源码构建
-
-```shell
-git clone --recurse-submodules https://github.com/BiliRoamingX/BiliRoamingX.git
-cd BiliRoamingX
-./gradlew dist
-```
-- Windows 系统上使用 `gradlew.bat` 命令而不是 `./gradlew`
-- 构建产物在 `build` 目录下
-
 ## ⬇️ 下载使用
 
-- 前往 [BiliRoamingX-PreBuilds Release](https://github.com/BiliRoamingX/BiliRoamingX-PreBuilds/releases/latest) 下载
-- 参照 [revanced-cli](https://github.com/ReVanced/revanced-cli/tree/main/docs) 文档打包
-  1. 下载定制版 [revanced-cli.jar](https://github.com/zjns/revanced-cli/releases/latest)
-  2. 从 [releases](https://github.com/BiliRoamingX/BiliRoamingX/releases/latest) 下载 `integrations.apk` 和 `patches.jar`
-  3. 执行终端命令 `java -jar revanced-cli.jar patch --merge integrations.apk --patch-bundle patches.jar --signing-levels 1,2,3 bilibili.apk`
+- 前往 [Release](https://github.com/leisurefire/BiliRoamingX-PreBuilds/releases/latest) 下载
 
 ## ⭐ Star History
 
