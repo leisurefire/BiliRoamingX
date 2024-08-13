@@ -49,10 +49,6 @@
 
 - 前往 [Release](https://github.com/leisurefire/BiliRoamingX-PreBuilds/releases/latest) 下载
 
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=BiliRoamingX/BiliRoamingX&type=Timeline)](https://star-history.com/#BiliRoamingX/BiliRoamingX&Timeline)
-
 ## 📃 Licence
 
 [![GitHub](https://img.shields.io/github/license/BiliRoamingX/BiliRoamingX?style=for-the-badge)](https://github.com/BiliRoamingX/BiliRoamingX/blob/main/LICENSE)
