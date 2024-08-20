@@ -92,7 +92,7 @@ class AboutFragment : BiliRoamingBaseSettingFragment() {
                 "device" to Build.MANUFACTURER + " " + Build.MODEL,
                 "abi_list" to Build.SUPPORTED_ABIS.joinToString(","),
                 "os_arch64" to isOsArch64,
-                "prebuilt" to isPrebuilt,
+                // "prebuilt" to isPrebuilt,
                 "app_id" to context.packageName,
                 "app_ver_name" to versionName,
                 "app_ver_code" to versionCode,
@@ -124,16 +124,7 @@ class AboutFragment : BiliRoamingBaseSettingFragment() {
     }
 
     private fun onVersionClick() {
-        if (Upgrade.customUpdate(fromSelf = true)) {
-            runCatching {
-                val (serviceClass, checkUpdateMethod) = checkUpdateMethod.split('#', limit = 2)
-                Upgrade.fromSelf = true
-                Class.forName(serviceClass).new().callMethod(checkUpdateMethod, hostActivity)
-            }.onFailure {
-                Upgrade.fromSelf = false
-                Logger.error(it) { "Update check failed" }
-            }
-        } else checkLatestRelease()
+        checkLatestRelease()
     }
 
     private fun checkVersion() = Utils.async {
@@ -210,7 +201,7 @@ class AboutFragment : BiliRoamingBaseSettingFragment() {
                 .setTitle(styledTitle)
                 .setView(wrapperView)
                 .setPositiveButton(Utils.getString("biliroaming_view")) { _, _ ->
-                    val tagUrl = "https://github.com/BiliRoamingX/BiliRoamingX/releases/tag/$tag"
+                    val tagUrl = "https://github.com/leisurefire/BiliRoamingX/releases/tag/$tag"
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(tagUrl))
                     startActivity(intent)
                 }
@@ -220,7 +211,7 @@ class AboutFragment : BiliRoamingBaseSettingFragment() {
     }
 
     private fun latestRelease() = runCatching {
-        val releaseUrl = "https://api.github.com/repos/BiliRoamingX/BiliRoamingX/releases/latest"
+        val releaseUrl = "https://api.github.com/repos/leisurefire/BiliRoamingX/releases/latest"
         val response = HttpClient.get(releaseUrl)?.json()
             ?: return@runCatching null
         val tag = response.optString("tag_name")
